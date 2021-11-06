@@ -1,0 +1,123 @@
+h2,
+h3 {
+  padding-left: 15px;
+}
+
+.container {
+  font-family: "Quicksand", sans-serif;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(111, 231, 176) 0%,
+    rgb(154, 198, 242) 100.2%
+  );
+  color: #155e63;
+  padding: 9px;
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: center;
+}
+.face {
+  max-width: 30px;
+}
+.btn-primary {
+  padding: 5px;
+  max-height: 30px;
+
+  border-color: transparent;
+  text-align: center;
+}
+.btn-primary:hover {
+  border-color: transparent;
+}
+.btn-info {
+  padding: 5px;
+  max-height: 30px;
+  border-color: transparent;
+  text-align: center;
+  display: inline;
+  color: #fff;
+}
+.btn-info:hover {
+  background-color: #1e8496;
+  border-color: transparent;
+  color: #fff;
+}
+.card {
+  border-color: #76b39d;
+  background-color: #f9f8ebc0 !important;
+}
+.search-bar {
+  margin-top: 10px;
+}
+.local-info {
+  margin-top: 10px;
+  padding: 10;
+  margin-bottom: 15px;
+  max-width: 190px;
+}
+.local-summary {
+  font-size: 18px;
+  font-style: italic;
+}
+.local-time {
+  color: #4a83b6;
+}
+.middle-card {
+  margin: 0 auto;
+}
+.middle-card.temp {
+  color: #4a83b6;
+}
+.current-temp {
+  font-size: 25px;
+  text-align: right;
+}
+
+.current-temp-convert a {
+  font-size: 23px;
+  font-style: italic;
+  text-decoration: none;
+  color: #155e63;
+  display: inline;
+}
+.high-today-temp-convert a {
+  font-style: italic;
+  text-decoration: none;
+  color: #155e63;
+}
+.low-today-temp-convert a {
+  font-style: italic;
+  text-decoration: none;
+  color: #155e63;
+}
+.card-body {
+  color: #76b39d;
+}
+.forecast {
+  font-size: 11px;
+}
+.rainbow {
+  max-width: 75px;
+}
+.coder {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  max-width: 130px;
+  font-size: 10px;
+  text-align: center;
+}
+.coder:hover {
+  border-color: transparent;
+  cursor: none;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(222, 168, 248) 0%,
+    rgb(168, 222, 248) 21.8%,
+    rgb(189, 250, 205) 35.6%,
+    rgb(243, 250, 189) 52.9%,
+    rgb(250, 227, 189) 66.8%,
+    rgb(248, 172, 172) 90%,
+    rgb(254, 211, 252) 99.7%
+  );
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/528b30d20d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="src/style.css" />
+    <title>Weather by katie</title>
+  </head>
+  <body>
+    <div class="container">
+    <br />
+      <div class="card top-card">
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6 search-bar">
+            <input
+              class="enter-city"
+              type="search"
+              placeholder="enter a city"
+              id="city-input"
+              autofocus="on"
+            />
+            <button type="button" class="btn btn-primary" id="btn-search">search</button>
+            <span>
+              <button type="button" class="btn btn-info" id="btn-local">local</button>
+            </span>
+          </div>
+          <div class="col-3"></div>
+        </div>
+        <div class="row">
+          <div class="col-6" >
+            <h2 id="local-city">
+              Denver 
+              <h2 id="country">USA</h2>
+            </h2>
+            <h3 class="local-summary" id="local-summary">
+              sunny day 
+              <img class="face"src="img/heart-eye.gif" />
+            </h3>
+          </div>
+          <div class="col-5">
+            <div class="card card-body local-info" id="local-city">
+              <em>
+                Local Time
+              </em>
+              <div class="current-time local-time" id="current-local-time">Friday, 4:20 PM MST</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row middle-card">
+        
+        <div class="card col-5 offset-1">
+          Current Temp 
+          <div class="row">
+            <span class="middle-card temp current-temp col-4" id="current-temp">
+              30 
+            </span>
+            <span class="current-temp-convert col-8">
+              <a  href="" id="current-temp-cel">
+                ℃
+              </a>
+              |
+              <a href="" id="current-temp-far">
+                ℉
+              </a>
+            </span>
+            </div>
+          </div>
+        <div class="card col-5">
+          Today's High
+          <div class="row">
+          <div class="middle-card temp col-6" id="today-high-temp">
+            45 
+          </div>
+          </div>
+          <div>
+            Today's Low 
+          </div>
+          <div class="row">
+            <div class="middle-card temp col-6" id="today-low-temp">
+              20 
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    <br />
+      <div class="bottom-card row">
+        <div class="col-1"></div>
+        <span class="card forecast col-2">
+          Monday
+          <img src="img/sun-rain.gif" />
+        </span>
+        <span class="card forecast col-2">
+          Tuesday
+          <img src="img/partly-cloudy.gif" />
+        </span>
+        <span class="card forecast col-2">
+          Wednesday
+          <img src="img/windy.gif" />
+        </span>
+        <span class="card forecast col-2">
+          Thursday
+          <img src="img/sun.gif" />
+        </span>
+        <span class="card forecast col-2">
+          Friday
+          <img src="img/rain.gif" />
+        </span>
+        <div class="col-1"></div>
+        <span>
+          <img class="rainbow" src="img/rainbow.gif" alt="rainbow" />
+        </span>
+        <div class="card coder">
+          coded by katie baker
+        </div>
+        </div>
+      </div>
+       
+    <script src="src/java.js">
+   
+
+    </script>
+  </body>
+</html>
