@@ -2,7 +2,11 @@ h2,
 h3 {
   padding-left: 15px;
 }
-
+li {
+  list-style-type: none;
+  text-align: left;
+  font-size: 11px;
+}
 .container {
   font-family: "Quicksand", sans-serif;
   background: radial-gradient(

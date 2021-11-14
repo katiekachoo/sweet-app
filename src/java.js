@@ -69,6 +69,8 @@ function showCityTemp(response) {
   let highTemp = Math.round(response.data.main.temp_max);
   let cityTime = document.querySelector("#current-local-time");
   let timeDescription = document.querySelector("#time-description");
+  let humidity = document.querySelector("#humid");
+  let windSpeed = document.querySelector("#wind");
   cityTemp.innerHTML = `${temp}`;
   cityDescrip.innerHTML = `${response.data.weather[0].description} 😄`;
   country.innerHTML = `${response.data.sys.country}`;
@@ -77,6 +79,8 @@ function showCityTemp(response) {
   highTempData.innerHTML = `${highTemp}`;
   cityTime.innerHTML = formatTime(response.data.dt * 1000);
   timeDescription.innerHTML = "Last updated";
+  humidity.innerhTML = response.data.main.humidity;
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
  }
 function searchCity(event) {
   event.preventDefault();
