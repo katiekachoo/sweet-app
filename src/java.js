@@ -11,8 +11,9 @@ let days = [
 let day = days[now. getDay()];
 let time = now.toLocaleTimeString();
 let localTime = document.querySelector("#current-local-time");
-localTime.innerHTML = `${day} ${time}`
-
+let timeDescription = document.querySelector("#time-description");
+localTime.innerHTML = `${day} ${time}`;
+timeDescription.innerHTML = "Local time";
 }
 
 function findLocal(position) {
@@ -34,22 +35,48 @@ function updateLocal (event) {
  let searchLocal = document.querySelector("#btn-local");
  searchLocal.addEventListener("click", updateLocal)
 
+function formatTime(timestamp) {
+  let date =  new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"];
+  let day = days[date.getDay()];
+  return `${day}, ${hours}:${minutes}`;
+}
+
 function showCityTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#current-temp");
-  cityTemp.innerHTML = `${temp}`;
   let cityDescrip = document.querySelector("#local-summary");
-  cityDescrip.innerHTML = `${response.data.weather[0].description} 😄`;
   let country = document.querySelector("#country");
-  country.innerHTML = `${response.data.sys.country}`;
   let cityName = document.querySelector("#local-city");
-  cityName.innerHTML = `${response.data.name}`;
   let lowTempData = document.querySelector("#today-low-temp");
   let lowTemp = Math.round(response.data.main.temp_min);
-  lowTempData.innerHTML = `${lowTemp}`;
   let highTempData = document.querySelector("#today-high-temp");
   let highTemp = Math.round(response.data.main.temp_max);
+  let cityTime = document.querySelector("#current-local-time");
+  let timeDescription = document.querySelector("#time-description");
+  cityTemp.innerHTML = `${temp}`;
+  cityDescrip.innerHTML = `${response.data.weather[0].description} 😄`;
+  country.innerHTML = `${response.data.sys.country}`;
+  cityName.innerHTML = `${response.data.name}`;
+  lowTempData.innerHTML = `${lowTemp}`;
   highTempData.innerHTML = `${highTemp}`;
+  cityTime.innerHTML = formatTime(response.data.dt * 1000);
+  timeDescription.innerHTML = "Last updated";
  }
 function searchCity(event) {
   event.preventDefault();
