@@ -20,8 +20,9 @@ li {
   max-width: 600px;
   text-align: center;
 }
-.face {
-  max-width: 30px;
+.icon {
+  max-width: 60px;
+  margin-bottom: 5px;
 }
 .btn-primary {
   padding: 5px;
@@ -38,7 +39,7 @@ li {
   max-height: 30px;
   border-color: transparent;
   text-align: center;
-  display: inline;
+  display: inline !important;
   color: #fff;
 }
 .btn-info:hover {

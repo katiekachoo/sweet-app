@@ -71,8 +71,10 @@ function showCityTemp(response) {
   let timeDescription = document.querySelector("#time-description");
   let humidity = document.querySelector("#humid");
   let windSpeed = document.querySelector("#wind");
+  let icon = document.querySelector("#icon");
   cityTemp.innerHTML = `${temp}`;
-  cityDescrip.innerHTML = `${response.data.weather[0].description} 😄`;
+  cityDescrip.innerHTML = `${response.data.weather[0].description}`;
+  icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   country.innerHTML = `${response.data.sys.country}`;
   cityName.innerHTML = `${response.data.name}`;
   lowTempData.innerHTML = `${lowTemp}`;
