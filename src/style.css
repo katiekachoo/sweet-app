@@ -23,6 +23,7 @@ li {
 .icon {
   max-width: 60px;
   margin-bottom: 5px;
+  filter: drop-shadow(0 0 0.5rem #155e63);
 }
 .btn-primary {
   padding: 5px;
