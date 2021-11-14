@@ -15,7 +15,6 @@ let timeDescription = document.querySelector("#time-description");
 localTime.innerHTML = `${day} ${time}`;
 timeDescription.innerHTML = "Local time";
 }
-
 function findLocal(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -31,10 +30,6 @@ function updateLocal (event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findLocal);
 }
-
- let searchLocal = document.querySelector("#btn-local");
- searchLocal.addEventListener("click", updateLocal)
-
 function formatTime(timestamp) {
   let date =  new Date(timestamp);
   let hours = date.getHours();
@@ -56,7 +51,6 @@ function formatTime(timestamp) {
   let day = days[date.getDay()];
   return `${day}, ${hours}:${minutes}`;
 }
-
 function showCityTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#current-temp");
@@ -72,6 +66,9 @@ function showCityTemp(response) {
   let humidity = document.querySelector("#humid");
   let windSpeed = document.querySelector("#wind");
   let icon = document.querySelector("#icon");
+  celTemp = response.data.main.temp;
+  celHigh = response.data.main.temp_max;
+  celLow = response.data.main.temp_min;
   cityTemp.innerHTML = `${temp}`;
   cityDescrip.innerHTML = `${response.data.weather[0].description}`;
   icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -95,36 +92,34 @@ function searchCity(event) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showCityTemp);
 }
-let updateCity = document.querySelector("#btn-search");
-updateCity.addEventListener("click", searchCity);
-
 function convertTempFar(event) {
   event.preventDefault();
   let tempCel = document.querySelector("#current-temp");
-  tempCel.innerHTML = "cel";
+  tempCel.innerHTML = Math.round(celTemp);
   let todayHigh = document.querySelector("#today-high-temp");
-  todayHigh.innerHTML = "cel";
+  todayHigh.innerHTML = Math.round(celHigh);
   let todayLow = document.querySelector("#today-low-temp");
-  todayLow.innerHTML = "cel";
+  todayLow.innerHTML = Math.round(celLow);
 }
-let currentTempCel = document.querySelector("#current-temp-cel");
-currentTempCel.addEventListener("click", convertTempFar);
-
 function convertTempCel(event) {
   event.preventDefault();
   let tempFar = document.querySelector("#current-temp");
-  tempFar.innerHTML = "far";
+  tempFar.innerHTML = Math.round(((celTemp*9)/5+32));
   let todayLowCel = document.querySelector("#today-low-temp");
-  todayLowCel.innerHTML = "far";
+  todayLowCel.innerHTML = Math.round(((celLow*9)/5+32));
   let todayHighCel = document.querySelector("#today-high-temp");
-  todayHighCel.innerHTML = "far";
+  todayHighCel.innerHTML = Math.round(((celHigh*9)/5+32));
 }
+let celTemp = null;
+let celHigh = null;
+let celLow = null;
+let searchLocal = document.querySelector("#btn-local");
+searchLocal.addEventListener("click", updateLocal)
+let updateCity = document.querySelector("#btn-search");
+updateCity.addEventListener("click", searchCity);
+let currentTempCel = document.querySelector("#current-temp-cel");
+currentTempCel.addEventListener("click", convertTempFar);
 let currentTempFar = document.querySelector("#current-temp-far");
 currentTempFar.addEventListener("click", convertTempCel);
-
-
-
-
-
 
 
