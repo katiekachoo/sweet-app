@@ -14,6 +14,7 @@ li {
     rgb(111, 231, 176) 0%,
     rgb(154, 198, 242) 100.2%
   );
+  border-color: #76b39d;
   color: #155e63;
   padding: 9px;
   margin: 30px auto;
@@ -48,10 +49,13 @@ li {
 }
 .card {
   border-color: #76b39d;
-  background-color: #f9f8ebc0 !important;
+  background-color: rgba(195, 231, 218, 0.8) !important;
 }
 .search-bar {
   margin-top: 10px;
+}
+.city-info {
+  text-align: center;
 }
 .local-info {
   margin-top: 10px;
@@ -73,7 +77,7 @@ li {
   color: #4a83b6;
 }
 .current-temp {
-  font-size: 25px;
+  font-size: 23px;
   text-align: right;
 }
 
@@ -105,10 +109,12 @@ li {
 }
 .forecast-icon {
   display: block;
-  margin: 0 auto;
+  margin: 0;
+  position: relative;
+  left: -7px;
 }
 .rainbow {
-  max-width: 75px;
+  max-width: 60px;
   padding: 5px;
 }
 .coder {

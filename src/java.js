@@ -113,7 +113,8 @@ function convertTempCel(event) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Mon","Tue","Wed","Thu","Fri"];
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row">
+  <div class="col-1"></div>`;
   days.forEach(function (day){
   forecastHTML = forecastHTML + 
     `
@@ -135,7 +136,7 @@ function displayForecast() {
           </div>
         </div>
     `});
-    forecastHTML = forecastHTML + `</div>`;
+    forecastHTML = forecastHTML + `<div class="col-1"> </div> </div>`;
     forecastElement.innerHTML = forecastHTML;
 }
 let celTemp = null;
