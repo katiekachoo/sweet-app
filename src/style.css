@@ -1,3 +1,6 @@
+body {
+  background-color: #d4f8e8;
+}
 h2,
 h3 {
   padding-left: 15px;
@@ -56,6 +59,7 @@ li {
 }
 .city-info {
   text-align: center;
+  padding-top: 28px;
 }
 .local-info {
   margin-top: 10px;
@@ -81,23 +85,14 @@ li {
   text-align: right;
 }
 
-.current-temp-convert a {
+.current-temp-convert {
   font-size: 23px;
   font-style: italic;
   text-decoration: none;
   color: #155e63;
   display: inline;
 }
-.high-today-temp-convert a {
-  font-style: italic;
-  text-decoration: none;
-  color: #155e63;
-}
-.low-today-temp-convert a {
-  font-style: italic;
-  text-decoration: none;
-  color: #155e63;
-}
+
 .card-body {
   color: #76b39d;
 }
@@ -114,6 +109,8 @@ li {
   left: -7px;
 }
 .rainbow {
+  display: block;
+  margin: 0 auto;
   max-width: 60px;
   padding: 5px;
 }
