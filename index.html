@@ -27,10 +27,10 @@
   <body>
     <div class="container">
     <br />
-      <div class="card top-card">
+      <div>
         <div class="row">
-          <div class="col-3"></div>
-          <div class="col-6 search-bar">
+          <div class="col-1"></div>
+          <div class="col-10 search-bar">
             <input
               class="enter-city"
               type="search"
@@ -39,16 +39,13 @@
               autofocus="on"
               autocomplete="off"
             />
-            <div><button type="button" class="btn btn-primary" id="btn-search">search</button>
-            <span>
+              <button type="button" class="btn btn-primary" id="btn-search">search</button>
               <button type="button" class="btn btn-info" id="btn-local">local</button>
-            </span>
-            </div>
           </div>
-          <div class="col-3"></div>
+          <div class="col-1"></div>
         </div>
         <div class="row">
-          <div class="col-6" >
+          <div class="col-4" >
             <h2 id="local-city">
               Denver 
               <h2 id="country">USA</h2>
@@ -60,63 +57,60 @@
               <img class="icon" id="icon" src="img/heart-eye.gif" alt="heart eyes smiley face"/>
             </span>
           </div>
-          <div class="col-5">
+          <div class="col-8">
             <div class="card card-body local-info" id="local-city">
               <em id="time-description">
                 Local Time
               </em>
               <div class="current-time local-time" id="current-local-time">Friday, 4:20 PM MST</div>
             </div>
-            
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="row middle-card">
-        
-        <div class="card col-5 offset-1">
-          Current Temp 
-          <div class="row">
-            <span class="middle-card temp current-temp col-4" id="current-temp">
-              30 
-            </span>
-            <span class="current-temp-convert col-8">
-              <a  href="" id="current-temp-cel">
-                ℃
-              </a>
-              |
-              <a href="" id="current-temp-far">
-                ℉
-              </a>
-            </span>
-            <ul>
-              <li>
-                Humidity <span id="humid">23</span>%
-              </li>
-              <li>
-                Wind Speed <span id="wind">2</span> km/h
-              </li>
-            </ul>
-            </div>
-          </div>
-        <div class="card col-5">
-          Today's High
-          <div class="row">
-          <div class="middle-card temp col-6" id="today-high-temp">
-            45 
-          </div>
-          </div>
-          <div>
-            Today's Low 
-          </div>
-          <div class="row">
-            <div class="middle-card temp col-6" id="today-low-temp">
-              20 
+            <div class="row middle-card">
+              <div class="card col-6">
+                Current Temp
+                <div class="row">
+                  <span class="middle-card temp current-temp col-4" id="current-temp">
+                    30
+                  </span>
+                  <span class="current-temp-convert col-8">
+                    <a href="" id="current-temp-cel">
+                      ℃
+                    </a>
+                    |
+                    <a href="" id="current-temp-far">
+                      ℉
+                    </a>
+                  </span>
+                  <ul>
+                    <li>
+                      Humidity <span id="humid">23</span>%
+                    </li>
+                    <li>
+                      Wind Speed <span id="wind">2</span> km/h
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card col-6">
+                Today's High
+                <div class="row">
+                  <div class="middle-card temp col-6" id="today-high-temp">
+                    45
+                  </div>
+                </div>
+                <div>
+                  Today's Low
+                </div>
+                <div class="row">
+                  <div class="middle-card temp col-6" id="today-low-temp">
+                    20
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <br />        
+      <br />       
         <div class="bottom-card forecast" id="forecast"></div>
       
     <br />
