@@ -19,11 +19,14 @@ li {
   margin: 30px auto;
   max-width: 600px;
   text-align: center;
+  margin-bottom: 5px;
 }
 .icon {
   max-width: 60px;
   margin-bottom: 10px;
   filter: drop-shadow(0 0 0.5rem #155e63);
+  display: block;
+  margin: 8px auto;
 }
 .btn-primary {
   padding: 5px;
@@ -99,15 +102,18 @@ li {
   color: #76b39d;
 }
 .forecast {
-  font-size: 11px;
+  font-size: 13px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.7;
 }
 .rainbow {
   max-width: 75px;
+  padding: 5px;
 }
 .coder {
-  display: block;
+  display: inline;
   margin: 0 auto;
-  margin-top: 5px;
   max-width: 130px;
   font-size: 10px;
   text-align: center;

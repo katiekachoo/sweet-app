@@ -110,6 +110,34 @@ function convertTempCel(event) {
   let todayHighCel = document.querySelector("#today-high-temp");
   todayHighCel.innerHTML = Math.round(((celHigh*9)/5+32));
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon","Tue","Wed","Thu","Fri"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day){
+  forecastHTML = forecastHTML + 
+    `
+    <div class="card col-2">
+          <div class="weather-forecast-date">${day}</div>
+          <img 
+            src="http://openweathermap.org/img/wn/50d@2x.png"
+            alt="img"
+            width="42"
+            class="icon"
+           />
+         <div class="weather-forecast-temp">
+           <span class="weather-forecast-temp-max">
+            18
+           </span>
+           <span class="weather-forecast-temp-min">
+            11
+           </span>
+          </div>
+        </div>
+    `});
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
 let celTemp = null;
 let celHigh = null;
 let celLow = null;
@@ -122,4 +150,4 @@ currentTempCel.addEventListener("click", convertTempFar);
 let currentTempFar = document.querySelector("#current-temp-far");
 currentTempFar.addEventListener("click", convertTempCel);
 
-
+displayForecast();
