@@ -51,6 +51,13 @@ function formatTime(timestamp) {
   let day = days[date.getDay()];
   return `${day}, ${hours}:${minutes}`;
 }
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "0bf572751074ee15d519faf4989d97e0";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
 function showCityTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#current-temp");
@@ -81,6 +88,7 @@ function showCityTemp(response) {
   timeDescription.innerHTML = "Last updated";
   humidity.innerhTML = response.data.main.humidity;
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  getForecast(response.data.coord)
  }
 function searchCity(event) {
   event.preventDefault();
@@ -110,7 +118,8 @@ function convertTempCel(event) {
   let todayHighCel = document.querySelector("#today-high-temp");
   todayHighCel.innerHTML = Math.round(((celHigh*9)/5+32));
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily[0].temp);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Mon","Tue","Wed","Thu","Fri"];
   let forecastHTML = `<div class="row">
@@ -150,5 +159,3 @@ let currentTempCel = document.querySelector("#current-temp-cel");
 currentTempCel.addEventListener("click", convertTempFar);
 let currentTempFar = document.querySelector("#current-temp-far");
 currentTempFar.addEventListener("click", convertTempCel);
-
-displayForecast();
