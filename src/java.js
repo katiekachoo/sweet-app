@@ -54,7 +54,7 @@ function formatTime(timestamp) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "0bf572751074ee15d519faf4989d97e0";
-  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   console.log(apiURL);
   axios.get(apiURL).then(displayForecast);
 }
@@ -95,28 +95,10 @@ function searchCity(event) {
   let searchInput = document.querySelector("#city-input").value;
   let apiKey = "0bf572751074ee15d519faf4989d97e0";
   let apiEnd = "https://api.openweathermap.org/data/2.5/weather?"
-  let apiUnit = "metric"
+  let apiUnit = "imperial"
   let apiUrl = `${apiEnd}q=${searchInput}&units=${apiUnit}&appid=${apiKey}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(showCityTemp);
-}
-function convertTempFar(event) {
-  event.preventDefault();
-  let tempCel = document.querySelector("#current-temp");
-  tempCel.innerHTML = Math.round(celTemp);
-  let todayHigh = document.querySelector("#today-high-temp");
-  todayHigh.innerHTML = Math.round(celHigh);
-  let todayLow = document.querySelector("#today-low-temp");
-  todayLow.innerHTML = Math.round(celLow);
-}
-function convertTempCel(event) {
-  event.preventDefault();
-  let tempFar = document.querySelector("#current-temp");
-  tempFar.innerHTML = Math.round(((celTemp*9)/5+32));
-  let todayLowCel = document.querySelector("#today-low-temp");
-  todayLowCel.innerHTML = Math.round(((celLow*9)/5+32));
-  let todayHighCel = document.querySelector("#today-high-temp");
-  todayHighCel.innerHTML = Math.round(((celHigh*9)/5+32));
 }
 
 function formatDay(timestamp) {
@@ -171,7 +153,3 @@ let searchLocal = document.querySelector("#btn-local");
 searchLocal.addEventListener("click", updateLocal)
 let updateCity = document.querySelector("#btn-search");
 updateCity.addEventListener("click", searchCity);
-let currentTempCel = document.querySelector("#current-temp-cel");
-currentTempCel.addEventListener("click", convertTempFar);
-let currentTempFar = document.querySelector("#current-temp-far");
-currentTempFar.addEventListener("click", convertTempCel);
