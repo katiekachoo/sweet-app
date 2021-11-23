@@ -39,17 +39,7 @@ li {
 .btn-primary:hover {
   border-color: transparent;
 }
-.btn-info {
-  border-color: transparent;
-  text-align: center;
-  display: inline !important;
-  color: #fff;
-}
-.btn-info:hover {
-  background-color: #1e8496;
-  border-color: transparent;
-  color: #fff;
-}
+
 .card {
   border-color: #76b39d;
   background-color: rgba(195, 231, 218, 0.8) !important;

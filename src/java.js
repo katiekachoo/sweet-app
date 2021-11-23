@@ -1,35 +1,3 @@
-function updateTime() {
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"];
-let day = days[now. getDay()];
-let time = now.toLocaleTimeString();
-let localTime = document.querySelector("#current-local-time");
-let timeDescription = document.querySelector("#time-description");
-localTime.innerHTML = `${day} ${time}`;
-timeDescription.innerHTML = "Local time";
-}
-function findLocal(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  console.log(position);
-  updateTime();
-  let apiKey = "0bf572751074ee15d519faf4989d97e0";
-  let apiEnd = "https://api.openweathermap.org/data/2.5/weather?"
-  let apiUnit = "metric"
-  let apiUrl = `${apiEnd}lat=${lat}&lon=${lon}&units=${apiUnit}&appid=${apiKey}`;
-  axios.get(apiUrl).then(updateTime);
-}
-function updateLocal (event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(findLocal);
-}
 function formatTime(timestamp) {
   let date =  new Date(timestamp);
   let hours = date.getHours();
@@ -149,7 +117,6 @@ function displayForecast(response) {
 let celTemp = null;
 let celHigh = null;
 let celLow = null;
-let searchLocal = document.querySelector("#btn-local");
-searchLocal.addEventListener("click", updateLocal)
 let updateCity = document.querySelector("#btn-search");
 updateCity.addEventListener("click", searchCity);
+updateCity.addEventListener(`keydown`, searchCity);
